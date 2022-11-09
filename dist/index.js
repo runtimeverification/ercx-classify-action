@@ -4132,8 +4132,11 @@ async function run() {
     for (let address of addresses) {
       const testResult = await forgeTest(address);
       const results = testResult[testSuite].test_results;
+      const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
+        aKey < bKey ? -1 : (aKey === bKey) ? 0 : 1
+      );
       let resultBitString = "";
-      for (let [testName, result] of Object.entries(results)) {
+      for (let [testName, result] of resultsSorted) {
         resultBitString += result.success ? "1" : "0";
       }
       summary += `${address}:${resultBitString}\n`;
@@ -4181,7 +4184,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.keys(addressJson).slice(0, 3);
+  const addresses = Object.keys(addressJson).slice(0, 10);
   return addresses;
 }
 
