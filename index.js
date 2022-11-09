@@ -41,10 +41,6 @@ async function run() {
       const testResult = forgeTestOut.stdout;
 
     }
-    
-    if (!result) {
-      core.setFailed("One or more golden tests failed");
-    }
   } catch (error) {
     core.setFailed(error.message);
   }
