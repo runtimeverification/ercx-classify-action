@@ -1,12 +1,14 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 const { promises: fs } = require('fs');
+const { Writable } = require('node:stream');
 
 
 const testFile = 'test/ERC20PostDeploymentTest.sol';
 const testContract = 'ERC20PostDeploymentTest';
 const testSuite = `${testFile}:${testContract}`;
 const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.top.json';
+const outStream = new Writable();
 
 // most @actions toolkit packages have async methods
 async function run() {
@@ -42,6 +44,7 @@ async function run() {
 async function forgeTest(address) {
   const infura_api_key = core.getInput('infura_api_key');
   const options = {
+    outStream,
     siltent: true,
     ignoreReturnCode: true,
     env : {

@@ -4019,6 +4019,14 @@ module.exports = require("net");
 
 /***/ }),
 
+/***/ 725:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:stream");
+
+/***/ }),
+
 /***/ 87:
 /***/ ((module) => {
 
@@ -4111,12 +4119,14 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(186);
 const exec = __nccwpck_require__(514);
 const { promises: fs } = __nccwpck_require__(747);
+const { Writable } = __nccwpck_require__(725);
 
 
 const testFile = 'test/ERC20PostDeploymentTest.sol';
 const testContract = 'ERC20PostDeploymentTest';
 const testSuite = `${testFile}:${testContract}`;
 const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.top.json';
+const outStream = new Writable();
 
 // most @actions toolkit packages have async methods
 async function run() {
@@ -4152,6 +4162,7 @@ async function run() {
 async function forgeTest(address) {
   const infura_api_key = core.getInput('infura_api_key');
   const options = {
+    outStream,
     siltent: true,
     ignoreReturnCode: true,
     env : {
