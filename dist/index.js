@@ -4146,7 +4146,7 @@ async function run() {
 
     // Call post deployment test for each address
     let summary = "";
-    for (let address of addresses) {
+    for (let [address, tokenInfo] of addresses) {
       const testResult = await forgeTest(address);
       const results = testResult[testSuite].test_results;
       const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
@@ -4156,7 +4156,10 @@ async function run() {
       for (let [testName, result] of resultsSorted) {
         resultBitString += result.success ? "1" : "0";
       }
-      summary += `${address}:${resultBitString}\n`;
+      const name = tokenInfo.name ?? 'Unknown name';
+      const symbol = tokenInfo.symbol ?? 'Unknown symbol';
+      const decimals = tokenInfo.decimals ?? 'Unknown decimals';
+      summary += `${address}:${resultBitString} (${name}, ${symbol}, ${decimals})\n`;
     }
     core.info("Results");
     core.info(testCases.join("\n"));
@@ -4203,7 +4206,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.keys(addressJson).slice(0, 10);
+  const addresses = Object.entries(addressJson).slice(0, 10);
   return addresses;
 }
 
