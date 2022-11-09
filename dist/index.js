@@ -4152,6 +4152,7 @@ async function run() {
 async function forgeTest(address) {
   const infura_api_key = core.getInput('infura_api_key');
   const options = {
+    siltent: true,
     ignoreReturnCode: true,
     env : {
       ERC20_ADDRESS : address
