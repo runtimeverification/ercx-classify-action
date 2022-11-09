@@ -4126,7 +4126,14 @@ const testFile = 'test/ERC20PostDeploymentTest.sol';
 const testContract = 'ERC20PostDeploymentTest';
 const testSuite = `${testFile}:${testContract}`;
 const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.top.json';
-const outStream = new Writable();
+const outStream = new Writable({
+  write(chunk, encoding, callback) {
+    // discard output
+  },
+  writev(chunks, callback) {
+    // discard output
+  }
+});
 
 // most @actions toolkit packages have async methods
 async function run() {
