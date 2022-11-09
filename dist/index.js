@@ -2688,19 +2688,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 258:
+/***/ 290:
 /***/ ((module) => {
 
-let wait = function (milliseconds) {
-  return new Promise((resolve) => {
-    if (typeof milliseconds !== 'number') {
-      throw new Error('milliseconds not a number');
-    }
-    setTimeout(() => resolve("done!"), milliseconds)
-  });
-};
-
-module.exports = wait;
+module.exports = eval("require")("@actions/exec");
 
 
 /***/ }),
@@ -2835,27 +2826,58 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(186);
-const wait = __nccwpck_require__(258);
+const exec = __nccwpck_require__(290);
+const { promises: fs } = __nccwpck_require__(747);
 
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    core.info(`Waiting ${ms} milliseconds ...`);
+    core.info('Running classifier');
+    const infura_api_key = core.getInput('infura_api_key');
+    const testFile = 'test/ERC20PostDeploymentTest.sol';
+    const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.top.json';
+    
+    // Read token list file
+    const addressFileContents = await fs.readFile(addressFile, 'utf8');
+    const addressJson = JSON.parse(addressFileContents);
+    const addresses = Object.keys(addressJson).slice(0, 3);
 
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
+    // Call post deployment test for each address
 
-    core.setOutput('time', new Date().toTimeString());
+    for (let address of addresses) {
+
+      const options = {
+        ignoreReturnCode: true,
+        env : {
+          ERC20_ADDRESS : address
+        }
+      };
+
+      // Run forge test
+      const forgeTestOut = await exec.getExecOutput(
+        'forge',
+        [
+          'test',
+          '--silent',
+          '--match-path', testFile,
+          '--fork-url', `https://mainnet.infura.io/v3/${infura_api_key}`
+        ],
+        options
+      );
+      const testResult = forgeTestOut.stdout;
+
+    }
+    
+    if (!result) {
+      core.setFailed("One or more golden tests failed");
+    }
   } catch (error) {
     core.setFailed(error.message);
   }
 }
 
 run();
-
 })();
 
 module.exports = __webpack_exports__;
