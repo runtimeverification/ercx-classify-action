@@ -18,7 +18,7 @@ async function run() {
     const addresses = await readAddresses();
 
     // Call post deployment test for each address
-    let results = "";
+    let summary = "";
     for (let address of addresses) {
       const testResult = await forgeTest(address);
       const results = testResult[testSuite].test_results;
@@ -26,11 +26,11 @@ async function run() {
       for (let [testName, result] of Object.entries(results)) {
         resultBitString += result.success ? "1" : "0";
       }
-      results += `${address}:${resultBitString}\n`;
+      summary += `${address}:${resultBitString}\n`;
     }
     core.info("Results");
     core.info(testCases.join("\n"));
-    core.info(results);
+    core.info(summary);
   } catch (error) {
     core.setFailed(error.message);
   }
