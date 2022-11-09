@@ -89,7 +89,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson).slice(0, 10);
+  const addresses = Object.entries(addressJson).slice(0, 100);
   return addresses;
 }
 
