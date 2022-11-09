@@ -4147,19 +4147,24 @@ async function run() {
     // Call post deployment test for each address
     let summary = "";
     for (let [address, tokenInfo] of addresses) {
-      const testResult = await forgeTest(address);
-      const results = testResult[testSuite].test_results;
-      const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
-        aKey < bKey ? -1 : (aKey === bKey) ? 0 : 1
-      );
-      let resultBitString = "";
-      for (let [testName, result] of resultsSorted) {
-        resultBitString += result.success ? "1" : "0";
+      try {
+        const testResult = await forgeTest(address);
+        const results = testResult[testSuite].test_results;
+        const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
+          aKey < bKey ? -1 : (aKey === bKey) ? 0 : 1
+        );
+        let resultBitString = "";
+        for (let [testName, result] of resultsSorted) {
+          resultBitString += result.success ? "1" : "0";
+        }
+        const name = tokenInfo.name ?? 'Unknown name';
+        const symbol = tokenInfo.symbol ?? 'Unknown symbol';
+        const decimals = tokenInfo.decimals ?? 'Unknown decimals';
+        summary += `${address}:${resultBitString} (${name}, ${symbol}, ${decimals})\n`;
+      } catch (e) {
+        core.warning(`Couldn't test token ${tokenInfo.name ?? 'Unknown name'} (address ${address})`);
+        core.warning(e);
       }
-      const name = tokenInfo.name ?? 'Unknown name';
-      const symbol = tokenInfo.symbol ?? 'Unknown symbol';
-      const decimals = tokenInfo.decimals ?? 'Unknown decimals';
-      summary += `${address}:${resultBitString} (${name}, ${symbol}, ${decimals})\n`;
     }
     core.info("Results");
     core.info(testCases.join("\n"));
