@@ -4163,6 +4163,7 @@ async function run() {
     }
     core.info("Results");
     core.info(testCases.join("\n"));
+    core.info("Address                                   :Fingerprint                           (Name, Symbol, Decimals)");
     core.info(summary);
   } catch (error) {
     core.setFailed(error.message);
