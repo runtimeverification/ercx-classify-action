@@ -4153,10 +4153,11 @@ async function run() {
         const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
           aKey < bKey ? -1 : (aKey === bKey) ? 0 : 1
         );
-        let resultBitString = "";
+        const resultBits = [];
         for (let [testName, result] of resultsSorted) {
-          resultBitString += result.success ? "1" : "0";
+          resultBits.push(result.success ? "1" : "0");
         }
+        const resultBitString = resultBits.join(",");
         const name = tokenInfo.name ?? 'Unknown name';
         const symbol = tokenInfo.symbol ?? 'Unknown symbol';
         const decimals = tokenInfo.decimals ?? 'Unknown decimals';
@@ -4167,8 +4168,7 @@ async function run() {
       }
     }
     core.info("Results");
-    core.info(testCases.join("\n"));
-    core.info("Address,Fingerprint,Name,Symbol,Decimals");
+    core.info(`Address,${testCases.join(",")},Name,Symbol,Decimals`);
     core.info(summary);
   } catch (error) {
     core.setFailed(error.message);
