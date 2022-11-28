@@ -4160,7 +4160,7 @@ async function run() {
         const name = tokenInfo.name ?? 'Unknown name';
         const symbol = tokenInfo.symbol ?? 'Unknown symbol';
         const decimals = tokenInfo.decimals ?? 'Unknown decimals';
-        summary += `${address}:${resultBitString} (${name}, ${symbol}, ${decimals})\n`;
+        summary += `${address},${resultBitString},${name},${symbol},${decimals}\n`;
       } catch (e) {
         core.warning(`Couldn't test token ${tokenInfo.name ?? 'Unknown name'} (address ${address})`);
         core.warning(e);
@@ -4168,7 +4168,7 @@ async function run() {
     }
     core.info("Results");
     core.info(testCases.join("\n"));
-    core.info("Address                                   :Fingerprint                           (Name, Symbol, Decimals)");
+    core.info("Address,Fingerprint,Name,Symbol,Decimals");
     core.info(summary);
   } catch (error) {
     core.setFailed(error.message);
