@@ -62,7 +62,7 @@ async function forgeTest(address) {
   const etherscan_api_key = core.getInput('etherscan_api_key');
   const options = {
     outStream,
-    siltent: true,
+    silent: true,
     ignoreReturnCode: true,
     env : {
       ERC20_ADDRESS : address,
@@ -73,6 +73,7 @@ async function forgeTest(address) {
     'forge',
     [
       'test',
+      '--ffi',
       '--silent',
       '--json',
       '--match-path', testFile,
