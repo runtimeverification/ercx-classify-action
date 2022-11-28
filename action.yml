@@ -4,6 +4,9 @@ inputs:
   infura_api_key:
     description: "The infura API key to be used with forge's fork mainnet mode"
     required: true
+  etherscan_api_key:
+    description: "The etherscan API key to be used to fetch ABI data"
+    required: true
 runs:
   using: 'node16'
   main: 'dist/index.js'

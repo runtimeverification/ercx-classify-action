@@ -4177,12 +4177,14 @@ async function run() {
 
 async function forgeTest(address) {
   const infura_api_key = core.getInput('infura_api_key');
+  const etherscan_api_key = core.getInput('etherscan_api_key');
   const options = {
     outStream,
     siltent: true,
     ignoreReturnCode: true,
     env : {
-      ERC20_ADDRESS : address
+      ERC20_ADDRESS : address,
+      ETHERSCAN_API_KEY : etherscan_api_key
     }
   };
   const forgeTestOut = await exec.getExecOutput(
