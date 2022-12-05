@@ -66,6 +66,7 @@ async function forgeTest(address) {
     ignoreReturnCode: true,
     env : {
       ERC20_ADDRESS : address,
+      ERC20_IMPLEMENTATION_ADDRESS : address,
       ETHERSCAN_API_KEY : etherscan_api_key
     }
   };
