@@ -4125,7 +4125,7 @@ const { Writable } = __nccwpck_require__(725);
 const testFile = 'test/ERC20PostDeploymentTest.sol';
 const testContract = 'ERC20PostDeploymentTest';
 const testSuite = `${testFile}:${testContract}`;
-const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.top.json';
+const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.all.json';
 const outStream = new Writable({
   write(chunk, encoding, callback) {
     // discard output
