@@ -26,8 +26,9 @@ async function run() {
     // Read token list file
     const addresses = await readAddresses();
 
+    core.info("Results");
+    core.info(`Name,Symbol,Decimals,Address,${testCases.join(",")}`);
     // Call post deployment test for each address
-    let summary = "";
     for (let [address, tokenInfo] of addresses) {
       try {
         const testResult = await forgeTest(address);
@@ -43,15 +44,13 @@ async function run() {
         const name = tokenInfo.name ?? 'Unknown name';
         const symbol = tokenInfo.symbol ?? 'Unknown symbol';
         const decimals = tokenInfo.decimals ?? 'Unknown decimals';
-        summary += `${address},${resultBitString},${name},${symbol},${decimals}\n`;
+        const row = `${name},${symbol},${decimals},${address},${resultBitString}\n`;
+        core.info(row);
       } catch (e) {
         core.warning(`Couldn't test token ${tokenInfo.name ?? 'Unknown name'} (address ${address})`);
         core.warning(e);
       }
     }
-    core.info("Results");
-    core.info(`Address,${testCases.join(",")},Name,Symbol,Decimals`);
-    core.info(summary);
   } catch (error) {
     core.setFailed(error.message);
   }
@@ -98,7 +97,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson).slice(0, 100);
+  const addresses = Object.entries(addressJson);
   return addresses;
 }
 
