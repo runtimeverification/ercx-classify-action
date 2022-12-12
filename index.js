@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const exec = require('@actions/exec');
 const { promises: fs } = require('fs');
 const { Writable } = require('node:stream');
+const { hasUncaughtExceptionCaptureCallback } = require('process');
 
 
 const testFile = 'test/ERC20PostDeploymentTest.sol';
@@ -70,8 +71,10 @@ async function forgeTest(address) {
     }
   };
   const forgeTestOut = await exec.getExecOutput(
-    'forge',
+    'timeout',
     [
+      '2m',
+      'forge',
       'test',
       '--ffi',
       '--silent',
@@ -81,6 +84,9 @@ async function forgeTest(address) {
     ],
     options
   );
+  if (forgeTestOut.exitCode === 124) {
+    throw `Timed out.`;
+  }
   const forgeTestJson = JSON.parse(forgeTestOut.stdout);
   return forgeTestJson;
 }
@@ -97,7 +103,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson);
+  const addresses = Object.entries(addressJson).slice(0, 1000);
   return addresses;
 }
 

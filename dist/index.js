@@ -4043,6 +4043,14 @@ module.exports = require("path");
 
 /***/ }),
 
+/***/ 765:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("process");
+
+/***/ }),
+
 /***/ 304:
 /***/ ((module) => {
 
@@ -4120,6 +4128,7 @@ const core = __nccwpck_require__(186);
 const exec = __nccwpck_require__(514);
 const { promises: fs } = __nccwpck_require__(747);
 const { Writable } = __nccwpck_require__(725);
+const { hasUncaughtExceptionCaptureCallback } = __nccwpck_require__(765);
 
 
 const testFile = 'test/ERC20PostDeploymentTest.sol';
@@ -4188,8 +4197,10 @@ async function forgeTest(address) {
     }
   };
   const forgeTestOut = await exec.getExecOutput(
-    'forge',
+    'timeout',
     [
+      '2m',
+      'forge',
       'test',
       '--ffi',
       '--silent',
@@ -4199,6 +4210,9 @@ async function forgeTest(address) {
     ],
     options
   );
+  if (forgeTestOut.exitCode === 124) {
+    throw `Timed out.`;
+  }
   const forgeTestJson = JSON.parse(forgeTestOut.stdout);
   return forgeTestJson;
 }
@@ -4215,7 +4229,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson);
+  const addresses = Object.entries(addressJson).slice(0, 1000);
   return addresses;
 }
 
