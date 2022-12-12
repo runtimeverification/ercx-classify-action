@@ -4206,10 +4206,8 @@ async function forgeTest(address) {
     }
   };
   const forgeTestOut = await exec.getExecOutput(
-    'timeout',
+    'forge',
     [
-      '2m',
-      'forge',
       'test',
       '--ffi',
       '--silent',
@@ -4219,16 +4217,8 @@ async function forgeTest(address) {
     ],
     options
   );
-  if (forgeTestOut.exitCode === 124) {
-    throw `Timed out.`;
-  }
-  try {
-    const forgeTestJson = JSON.parse(forgeTestOut.stdout);
-    return forgeTestJson;
-  } catch (e) {
-    core.warning(`forgeTestOut.stdOut: ${forgeTestOut.stdout}`);
-    throw e;
-  }
+  const forgeTestJson = JSON.parse(forgeTestOut.stdout);
+  return forgeTestJson;
 }
 
 async function forgeTestList() {
@@ -4241,9 +4231,14 @@ async function forgeTestList() {
 }
 
 async function readAddresses() {
+  const startIndex = core.getInput('test_set_start_index');
+  const count = core.getInput('test_set_count');
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson).slice(0, 1);
+  const addresses = Object.entries(addressJson).slice(
+    startIndex,
+    startIndex + count
+  );
   return addresses;
 }
 
