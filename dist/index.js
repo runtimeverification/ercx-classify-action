@@ -4146,6 +4146,15 @@ const outStream = new Writable({
 
 // most @actions toolkit packages have async methods
 async function run() {
+
+  const timeoutOut = await exec.getExecOutput(
+    'which',
+    ['timeout']
+  );
+
+  core.info(`${timeoutOut.stdout}`);
+
+
   try {
     core.info('Running classifier');
     const forgeList = await forgeTestList();
