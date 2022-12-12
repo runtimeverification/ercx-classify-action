@@ -4226,7 +4226,7 @@ async function forgeTest(address) {
     const forgeTestJson = JSON.parse(forgeTestOut.stdout);
     return forgeTestJson;
   } catch (e) {
-    core.warning(forgeTestOut.stdout);
+    core.warning(`forgeTestOut.stdOut: ${forgeTestOut.stdout}`);
     throw e;
   }
 }
