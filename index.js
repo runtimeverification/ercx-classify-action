@@ -105,8 +105,8 @@ async function forgeTestList() {
 }
 
 async function readAddresses() {
-  const startIndex = core.getInput('test_set_start_index');
-  const count = core.getInput('test_set_count');
+  const startIndex = Number(core.getInput('test_set_start_index'));
+  const count = Number(core.getInput('test_set_count'));
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
   const addresses = Object.entries(addressJson).slice(

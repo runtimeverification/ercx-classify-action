@@ -7,6 +7,14 @@ inputs:
   etherscan_api_key:
     description: "The etherscan API key to be used to fetch ABI data"
     required: true
+  test_set_start_index:
+    description: 'Index of the first token to classify'
+    required: true
+    default: '0'
+  test_set_count:
+    description: 'Number of tokens to classify'
+    required: true
+    default: '100'
 runs:
   using: 'node16'
   main: 'dist/index.js'
