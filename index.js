@@ -96,8 +96,13 @@ async function forgeTest(address) {
   if (forgeTestOut.exitCode === 124) {
     throw `Timed out.`;
   }
-  const forgeTestJson = JSON.parse(forgeTestOut.stdout);
-  return forgeTestJson;
+  try {
+    const forgeTestJson = JSON.parse(forgeTestOut.stdout);
+    return forgeTestJson;
+  } catch (e) {
+    core.warning(forgeTestOut.stdout);
+    throw e;
+  }
 }
 
 async function forgeTestList() {
@@ -112,7 +117,7 @@ async function forgeTestList() {
 async function readAddresses() {
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson).slice(0, 1000);
+  const addresses = Object.entries(addressJson).slice(0, 1);
   return addresses;
 }
 
