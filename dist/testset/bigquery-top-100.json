@@ -1,0 +1,403 @@
+[
+    {
+    "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "tx_count": "148401168",
+    "block_timestamp": "2017-11-28 00:41:21.000000 UTC"
+  }, {
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "tx_count": "11222108",
+    "block_timestamp": "2017-12-12 11:17:35.000000 UTC"
+  }, {
+    "address": "0x174bfa6600bf90c885c7c01c7031389ed1461ab9",
+    "tx_count": "9088367",
+    "block_timestamp": "2019-01-23 05:34:44.000000 UTC"
+  }, {
+    "address": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+    "tx_count": "6296131",
+    "block_timestamp": "2020-07-31 18:32:43.000000 UTC"
+  }, {
+    "address": "0x514910771af9ca656af840dff83e8264ecf986ca",
+    "tx_count": "6244541",
+    "block_timestamp": "2017-09-16 21:26:29.000000 UTC"
+  }, {
+    "address": "0x0d8775f648430679a709e98d2b0cb6250d2887ef",
+    "tx_count": "3015944",
+    "block_timestamp": "2017-05-29 18:45:10.000000 UTC"
+  }, {
+    "address": "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0",
+    "tx_count": "2970764",
+    "block_timestamp": "2017-06-20 18:24:49.000000 UTC"
+  }, {
+    "address": "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
+    "tx_count": "2757767",
+    "block_timestamp": "2017-07-05 14:18:58.000000 UTC"
+  }, {
+    "address": "0x8fdcc30eda7e94f1c12ce0280df6cd531e8365c5",
+    "tx_count": "2229777",
+    "block_timestamp": "2018-06-08 09:22:03.000000 UTC"
+  }, {
+    "address": "0x9b9647431632af44be02ddd22477ed94d14aacaa",
+    "tx_count": "2194131",
+    "block_timestamp": "2020-02-24 03:33:43.000000 UTC"
+  }, {
+    "address": "0xf230b790e05390fc8295f4d3f60332c93bed42e2",
+    "tx_count": "2093110",
+    "block_timestamp": "2017-08-28 07:53:48.000000 UTC"
+  }, {
+    "address": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+    "tx_count": "1833559",
+    "block_timestamp": "2017-08-15 19:18:09.000000 UTC"
+  }, {
+    "address": "0xe41d2489571d322189246dafa5ebde1f4699f498",
+    "tx_count": "1812261",
+    "block_timestamp": "2017-08-11 18:39:16.000000 UTC"
+  }, {
+    "address": "0xb64ef51c888972c908cfacf59b47c1afbc0ab8ac",
+    "tx_count": "1768106",
+    "block_timestamp": "2017-06-19 16:16:35.000000 UTC"
+  }, {
+    "address": "0x8e766f57f7d16ca50b4a0b90b88f6468a09b0439",
+    "tx_count": "1564475",
+    "block_timestamp": "2019-03-27 00:40:23.000000 UTC"
+  }, {
+    "address": "0xa15c7ebe1f07caf6bff097d8a589fb8ac49ae5b3",
+    "tx_count": "1471818",
+    "block_timestamp": "2018-03-08 07:29:00.000000 UTC"
+  }, {
+    "address": "0x03df4c372a29376d2c8df33a1b5f001cd8d68b0e",
+    "tx_count": "1452754",
+    "block_timestamp": "2017-10-10 08:31:21.000000 UTC"
+  }, {
+    "address": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
+    "tx_count": "1448150",
+    "block_timestamp": "2017-10-02 01:02:07.000000 UTC"
+  }, {
+    "address": "0x9e9801bace260f58407c15e6e515c45918756e0f",
+    "tx_count": "1442490",
+    "block_timestamp": "2018-08-25 09:43:19.000000 UTC"
+  }, {
+    "address": "0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b",
+    "tx_count": "1393096",
+    "block_timestamp": "2018-11-14 09:11:48.000000 UTC"
+  }, {
+    "address": "0x0e50e6d6bb434938d8fe670a2d7a14cd128eb50f",
+    "tx_count": "1373486",
+    "block_timestamp": "2018-10-05 08:09:58.000000 UTC"
+  }, {
+    "address": "0x21ab6c9fac80c59d401b37cb43f81ea9dde7fe34",
+    "tx_count": "1332392",
+    "block_timestamp": "2018-06-05 03:58:02.000000 UTC"
+  }, {
+    "address": "0x3506424f91fd33084466f402d5d97f05f8e3b4af",
+    "tx_count": "1235349",
+    "block_timestamp": "2018-10-26 07:00:45.000000 UTC"
+  }, {
+    "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+    "tx_count": "1092467",
+    "block_timestamp": "2019-08-09 05:36:48.000000 UTC"
+  }, {
+    "address": "0x744d70fdbe2ba4cf95131626614a1763df805b9e",
+    "tx_count": "1022552",
+    "block_timestamp": "2017-06-19 16:21:13.000000 UTC"
+  }, {
+    "address": "0xbc4162d53f945266684f4e5e48d545f206bc1ca5",
+    "tx_count": "989166",
+    "block_timestamp": "2019-08-16 09:16:17.000000 UTC"
+  }, {
+    "address": "0xdd974d5c2e2928dea5f71b9825b8b646686bd200",
+    "tx_count": "941059",
+    "block_timestamp": "2017-09-12 05:33:19.000000 UTC"
+  }, {
+    "address": "0x62b9f8741bf53a6986a5411c0557c30f6f11f3af",
+    "tx_count": "932476",
+    "block_timestamp": "2019-06-24 13:27:49.000000 UTC"
+  }, {
+    "address": "0x653430560be843c4a3d143d0110e896c2ab8ac0d",
+    "tx_count": "904429",
+    "block_timestamp": "2017-12-19 07:42:57.000000 UTC"
+  }, {
+    "address": "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+    "tx_count": "886761",
+    "block_timestamp": "2017-07-05 14:31:24.000000 UTC"
+  }, {
+    "address": "0x9dffe202df7f82ba57a7f8d571628805eff7fed9",
+    "tx_count": "871944",
+    "block_timestamp": "2019-07-03 12:42:02.000000 UTC"
+  }, {
+    "address": "0x74fd51a98a4a1ecbef8cc43be801cce630e260bd",
+    "tx_count": "867532",
+    "block_timestamp": "2018-05-23 17:40:17.000000 UTC"
+  }, {
+    "address": "0x93e682107d1e9defb0b5ee701c71707a4b2e46bc",
+    "tx_count": "819534",
+    "block_timestamp": "2017-05-24 14:02:18.000000 UTC"
+  }, {
+    "address": "0x6c6ee5e31d828de241282b9606c8e98ea48526e2",
+    "tx_count": "800675",
+    "block_timestamp": "2018-02-01 01:21:09.000000 UTC"
+  }, {
+    "address": "0x1f0480a66883de97d2b054929252aae8f664c15c",
+    "tx_count": "799863",
+    "block_timestamp": "2018-05-12 15:27:00.000000 UTC"
+  }, {
+    "address": "0x0d152b9ee87ebae179f64c067a966dd716c50742",
+    "tx_count": "787617",
+    "block_timestamp": "2018-08-14 06:08:19.000000 UTC"
+  }, {
+    "address": "0xd3ebdaea9aeac98de723f640bce4aa07e2e44192",
+    "tx_count": "782842",
+    "block_timestamp": "2019-02-27 10:12:29.000000 UTC"
+  }, {
+    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    "tx_count": "745893",
+    "block_timestamp": "2018-11-24 21:45:52.000000 UTC"
+  }, {
+    "address": "0x8a88f04e0c905054d2f33b26bb3a46d7091a039a",
+    "tx_count": "743913",
+    "block_timestamp": "2018-07-21 18:57:20.000000 UTC"
+  }, {
+    "address": "0x3495ffcee09012ab7d827abf3e3b3ae428a38443",
+    "tx_count": "718969",
+    "block_timestamp": "2018-04-23 02:09:02.000000 UTC"
+  }, {
+    "address": "0x41e5560054824ea6b0732e656e3ad64e20e94e45",
+    "tx_count": "706956",
+    "block_timestamp": "2017-07-11 23:57:31.000000 UTC"
+  }, {
+    "address": "0x4e15361fd6b4bb609fa63c81a2be19d873717870",
+    "tx_count": "688847",
+    "block_timestamp": "2018-06-14 12:39:02.000000 UTC"
+  }, {
+    "address": "0x4a220e6096b25eadb88358cb44068a3248254675",
+    "tx_count": "687858",
+    "block_timestamp": "2018-04-06 19:52:41.000000 UTC"
+  }, {
+    "address": "0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d",
+    "tx_count": "660360",
+    "block_timestamp": "2018-04-09 11:40:16.000000 UTC"
+  }, {
+    "address": "0xbc2faad1ec407571249b0e874a9abd840111389b",
+    "tx_count": "650466",
+    "block_timestamp": "2019-09-29 03:23:00.000000 UTC"
+  }, {
+    "address": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+    "tx_count": "647765",
+    "block_timestamp": "2017-11-25 18:24:17.000000 UTC"
+  }, {
+    "address": "0x0e69d0a2bbb30abcb7e5cfea0e4fde19c00a8d47",
+    "tx_count": "647338",
+    "block_timestamp": "2018-05-11 04:22:37.000000 UTC"
+  }, {
+    "address": "0x58959e0c71080434f237bd42d07cd84b74cef438",
+    "tx_count": "642402",
+    "block_timestamp": "2018-08-06 11:05:01.000000 UTC"
+  }, {
+    "address": "0xe62e6e6c3b808faad3a54b226379466544d76ea4",
+    "tx_count": "628642",
+    "block_timestamp": "2019-07-25 15:20:26.000000 UTC"
+  }, {
+    "address": "0xe1ac9eb7cddabfd9e5ca49c23bd521afcdf8be49",
+    "tx_count": "628448",
+    "block_timestamp": "2019-04-10 09:34:33.000000 UTC"
+  }, {
+    "address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+    "tx_count": "628214",
+    "block_timestamp": "2017-12-18 03:10:38.000000 UTC"
+  }, {
+    "address": "0x6f259637dcd74c767781e37bc6133cd6a68aa161",
+    "tx_count": "627972",
+    "block_timestamp": "2018-01-31 10:50:02.000000 UTC"
+  }, {
+    "address": "0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206",
+    "tx_count": "596369",
+    "block_timestamp": "2018-04-20 18:50:49.000000 UTC"
+  }, {
+    "address": "0xe99a894a69d7c2e3c92e61b64c505a6a57d2bc07",
+    "tx_count": "595288",
+    "block_timestamp": "2018-08-16 17:08:15.000000 UTC"
+  }, {
+    "address": "0x7a271d1df2c3f2fef734611c6c7ee6b9b8439204",
+    "tx_count": "578102",
+    "block_timestamp": "2019-03-25 10:38:47.000000 UTC"
+  }, {
+    "address": "0xc4131c1893576e078a0b637b653f3e6a18e137ac",
+    "tx_count": "572660",
+    "block_timestamp": "2018-12-19 03:37:34.000000 UTC"
+  }, {
+    "address": "0x595832f8fc6bf59c85c527fec3740a1b7a361269",
+    "tx_count": "568047",
+    "block_timestamp": "2017-06-03 03:25:59.000000 UTC"
+  }, {
+    "address": "0x3c7b464376db7c9927930cf50eefdea2eff3a66a",
+    "tx_count": "555476",
+    "block_timestamp": "2019-09-10 10:46:27.000000 UTC"
+  }, {
+    "address": "0xba7435a4b4c747e0101780073eeda872a69bdcd4",
+    "tx_count": "552062",
+    "block_timestamp": "2018-04-19 00:18:30.000000 UTC"
+  }, {
+    "address": "0x408e41876cccdc0f92210600ef50372656052a38",
+    "tx_count": "547244",
+    "block_timestamp": "2017-12-31 02:49:28.000000 UTC"
+  }, {
+    "address": "0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27",
+    "tx_count": "536310",
+    "block_timestamp": "2018-01-12 09:44:42.000000 UTC"
+  }, {
+    "address": "0x3597bfd533a99c9aa083587b074434e61eb0a258",
+    "tx_count": "536006",
+    "block_timestamp": "2017-07-12 06:43:01.000000 UTC"
+  }, {
+    "address": "0x03cb0021808442ad5efb61197966aef72a1def96",
+    "tx_count": "532868",
+    "block_timestamp": "2018-11-04 15:06:34.000000 UTC"
+  }, {
+    "address": "0x686b30a80826340a59afa564c2a01b79128eb7dd",
+    "tx_count": "531952",
+    "block_timestamp": "2018-10-19 03:31:27.000000 UTC"
+  }, {
+    "address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
+    "tx_count": "522396",
+    "block_timestamp": "2017-06-10 16:02:40.000000 UTC"
+  }, {
+    "address": "0x931abd3732f7eada74190c8f89b46f8ba7103d54",
+    "tx_count": "510309",
+    "block_timestamp": "2019-03-25 10:01:53.000000 UTC"
+  }, {
+    "address": "0x419d0d8bdd9af5e606ae2232ed285aff190e711b",
+    "tx_count": "508383",
+    "block_timestamp": "2017-07-07 16:51:29.000000 UTC"
+  }, {
+    "address": "0xb97048628db6b661d4c2aa833e95dbe1a905b280",
+    "tx_count": "497467",
+    "block_timestamp": "2017-06-16 03:00:52.000000 UTC"
+  }, {
+    "address": "0x4156d3342d5c385a87d264f90653733592000581",
+    "tx_count": "479393",
+    "block_timestamp": "2017-07-28 16:29:52.000000 UTC"
+  }, {
+    "address": "0x4dc3643dbc642b72c158e7f3d2ff232df61cb6ce",
+    "tx_count": "468846",
+    "block_timestamp": "2017-09-22 13:03:54.000000 UTC"
+  }, {
+    "address": "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec",
+    "tx_count": "461451",
+    "block_timestamp": "2018-01-29 16:34:21.000000 UTC"
+  }, {
+    "address": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4",
+    "tx_count": "460207",
+    "block_timestamp": "2019-02-21 00:57:45.000000 UTC"
+  }, {
+    "address": "0xa37d94e80eab7a5bcb6d2e76b7666e341e4b58f6",
+    "tx_count": "456187",
+    "block_timestamp": "2018-09-06 04:24:03.000000 UTC"
+  }, {
+    "address": "0xb63b606ac810a52cca15e44bb630fd42d8d1d83d",
+    "tx_count": "453261",
+    "block_timestamp": "2017-06-26 15:20:11.000000 UTC"
+  }, {
+    "address": "0x58b6a8a3302369daec383334672404ee733ab239",
+    "tx_count": "452508",
+    "block_timestamp": "2018-04-30 20:03:51.000000 UTC"
+  }, {
+    "address": "0x457476bc97adef10aba63fcadaefe503553fa0d2",
+    "tx_count": "447543",
+    "block_timestamp": "2018-11-22 10:36:30.000000 UTC"
+  }, {
+    "address": "0x4092678e4e78230f46a1534c0fbc8fa39780892b",
+    "tx_count": "442962",
+    "block_timestamp": "2018-01-15 08:29:11.000000 UTC"
+  }, {
+    "address": "0xb363a3c584b1f379c79fbf09df015da5529d4dac",
+    "tx_count": "439410",
+    "block_timestamp": "2018-04-09 13:42:08.000000 UTC"
+  }, {
+    "address": "0x45555629aabfea138ead1c1e5f2ac3cce2add830",
+    "tx_count": "439082",
+    "block_timestamp": "2018-02-09 21:50:06.000000 UTC"
+  }, {
+    "address": "0xd77bcd9cf4212a41defbcd2e2ff0f50fea2be643",
+    "tx_count": "437243",
+    "block_timestamp": "2018-04-18 04:03:50.000000 UTC"
+  }, {
+    "address": "0xd850942ef8811f2a866692a623011bde52a462c1",
+    "tx_count": "435640",
+    "block_timestamp": "2017-08-15 06:19:35.000000 UTC"
+  }, {
+    "address": "0xc5d105e63711398af9bbff092d4b6769c82f793d",
+    "tx_count": "426711",
+    "block_timestamp": "2018-02-09 11:27:42.000000 UTC"
+  }, {
+    "address": "0x6bc1f3a1ae56231dbb64d3e82e070857eae86045",
+    "tx_count": "423064",
+    "block_timestamp": "2019-11-27 09:02:27.000000 UTC"
+  }, {
+    "address": "0x1776e1f26f98b1a5df9cd347953a26dd3cb46671",
+    "tx_count": "422644",
+    "block_timestamp": "2017-06-20 08:10:37.000000 UTC"
+  }, {
+    "address": "0xc9c4d9ec2b44b241361707679d3db0876ac10ca6",
+    "tx_count": "421387",
+    "block_timestamp": "2018-07-14 08:20:10.000000 UTC"
+  }, {
+    "address": "0xedbaf3c5100302dcdda53269322f3730b1f0416d",
+    "tx_count": "411817",
+    "block_timestamp": "2016-11-19 21:24:35.000000 UTC"
+  }, {
+    "address": "0x4672bad527107471cb5067a887f4656d585a8a31",
+    "tx_count": "410766",
+    "block_timestamp": "2018-01-19 17:01:07.000000 UTC"
+  }, {
+    "address": "0x0abdace70d3790235af448c88547603b945604ea",
+    "tx_count": "400497",
+    "block_timestamp": "2017-07-17 08:42:53.000000 UTC"
+  }, {
+    "address": "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
+    "tx_count": "395469",
+    "block_timestamp": "2019-08-16 18:04:32.000000 UTC"
+  }, {
+    "address": "0x80fb784b7ed66730e8b1dbd9820afd29931aab03",
+    "tx_count": "386831",
+    "block_timestamp": "2017-09-17 20:02:50.000000 UTC"
+  }, {
+    "address": "0x6a750d255416483bec1a31ca7050c6dac4263b57",
+    "tx_count": "386402",
+    "block_timestamp": "2018-03-15 08:06:01.000000 UTC"
+  }, {
+    "address": "0xbf2179859fc6d5bee9bf9158632dc51678a4100e",
+    "tx_count": "385332",
+    "block_timestamp": "2017-12-18 09:31:49.000000 UTC"
+  }, {
+    "address": "0xe6b75a1960f91bfa7010dec8543685ead67f8cff",
+    "tx_count": "377697",
+    "block_timestamp": "2018-09-16 15:57:44.000000 UTC"
+  }, {
+    "address": "0x7c5cb1220bd293ff9cf903915732e51a71292038",
+    "tx_count": "369502",
+    "block_timestamp": "2019-05-08 04:31:08.000000 UTC"
+  }, {
+    "address": "0xfc87d4f82fc5fe80a2d1692ffee872b2517c34c7",
+    "tx_count": "369334",
+    "block_timestamp": "2019-02-25 13:13:48.000000 UTC"
+  }, {
+    "address": "0xb5a5f22694352c15b00323844ad545abb2b11028",
+    "tx_count": "365514",
+    "block_timestamp": "2017-09-12 09:39:41.000000 UTC"
+  }, {
+    "address": "0x1530df3e1c69501d4ecb7e58eb045b90de158873",
+    "tx_count": "363266",
+    "block_timestamp": "2018-02-14 14:17:55.000000 UTC"
+  }, {
+    "address": "0xc77b230f31b517f1ef362e59c173c2be6540b5e8",
+    "tx_count": "354786",
+    "block_timestamp": "2019-01-16 17:19:50.000000 UTC"
+  }, {
+    "address": "0x9e15f8ad98e95033c1d4798458cec34a4b5972b0",
+    "tx_count": "352654",
+    "block_timestamp": "2019-08-21 03:08:54.000000 UTC"
+  }, {
+    "address": "0x5da8d37485b4374fc338fc1f1ea31d07eb7bedd3",
+    "tx_count": "349186",
+    "block_timestamp": "2018-07-29 16:24:22.000000 UTC"
+  }
+]

@@ -2,13 +2,10 @@ const core = require('@actions/core');
 const exec = require('@actions/exec');
 const { promises: fs } = require('fs');
 const { Writable } = require('node:stream');
-const { hasUncaughtExceptionCaptureCallback } = require('process');
-
 
 const testFile = 'test/ERC20PostDeploymentTest.sol';
 const testContract = 'ERC20PostDeploymentTest';
 const testSuite = `${testFile}:${testContract}`;
-const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.all.json';
 const outStream = new Writable({
   write(chunk, encoding, callback) {
     // discard output
@@ -105,6 +102,11 @@ async function forgeTestList() {
 }
 
 async function readAddresses() {
+  const testSetName = core.getInput('test_set_name');
+  if (!(['bigquery-top-100', 'buggy-top-100', 'etherscan-top-1000'].includes(testSetName))) {
+    throw `Unknown test set: ${testSetName}`
+  }
+  const addressFile = `${__dirname}/testset/${testSetName}.json`;
   const startIndex = Number(core.getInput('test_set_start_index'));
   const count = Number(core.getInput('test_set_count'));
   const addressFileContents = await fs.readFile(addressFile, 'utf8');

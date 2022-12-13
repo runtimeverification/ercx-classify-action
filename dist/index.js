@@ -4043,14 +4043,6 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 765:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("process");
-
-/***/ }),
-
 /***/ 304:
 /***/ ((module) => {
 
@@ -4128,13 +4120,10 @@ const core = __nccwpck_require__(186);
 const exec = __nccwpck_require__(514);
 const { promises: fs } = __nccwpck_require__(747);
 const { Writable } = __nccwpck_require__(725);
-const { hasUncaughtExceptionCaptureCallback } = __nccwpck_require__(765);
-
 
 const testFile = 'test/ERC20PostDeploymentTest.sol';
 const testContract = 'ERC20PostDeploymentTest';
 const testSuite = `${testFile}:${testContract}`;
-const addressFile = 'lib/awesome-buggy-erc20-tokens/bad_tokens.all.json';
 const outStream = new Writable({
   write(chunk, encoding, callback) {
     // discard output
@@ -4231,6 +4220,11 @@ async function forgeTestList() {
 }
 
 async function readAddresses() {
+  const testSetName = core.getInput('test_set_name');
+  if (!(['bigquery-top-100', 'buggy-top-100', 'etherscan-top-1000'].includes(testSetName))) {
+    throw `Unknown test set: ${testSetName}`
+  }
+  const addressFile = __nccwpck_require__.ab + "testset/" + testSetName + '.json';
   const startIndex = Number(core.getInput('test_set_start_index'));
   const count = Number(core.getInput('test_set_count'));
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
