@@ -52,7 +52,7 @@ async function run() {
         const name = tokenInfo.name ?? 'Unknown name';
         const symbol = tokenInfo.symbol ?? 'Unknown symbol';
         const decimals = tokenInfo.decimals ?? 'Unknown decimals';
-        const row = `${name},${symbol},${decimals},${address},${resultBitString}\n`;
+        const row = `${name},${symbol},${decimals},${address},${resultBitString}`;
         core.info(row);
       } catch (e) {
         core.warning(`Couldn't test token ${tokenInfo.name ?? 'Unknown name'} (address ${address})`);
@@ -96,7 +96,8 @@ async function forgeTest(address) {
 async function forgeTestList() {
   const forgeListOut = await exec.getExecOutput(
     'forge',
-    ['test', '--list', '--json', '--silent']
+    ['test', '--list', '--json', '--silent'],
+    { outStream }
   );
   const forgeListJson = JSON.parse(forgeListOut.stdout);
   return forgeListJson;
