@@ -28,13 +28,16 @@ async function run() {
 
   try {
     core.info('Running classifier');
+    core.info(`Test set name: ${core.getInput('test_set_name')}`);
+    core.info(`Test set start index: ${core.getInput('test_set_start_index')}`);
+    core.info(`Test set count: ${core.getInput('test_set_count')}`);
     const forgeList = await forgeTestList();
     const testCases = forgeList[testFile][testContract];
     // Read token list file
     const addresses = await readAddresses();
 
     core.info("Results");
-    core.info(`Name,Symbol,Decimals,Address,${testCases.join(",")}`);
+    core.info(`Address,${testCases.join(",")}`);
     // Call post deployment test for each address
     for (let tokenInfo of addresses) {
       try {
@@ -49,10 +52,7 @@ async function run() {
           resultBits.push(result.success ? "1" : "0");
         }
         const resultBitString = resultBits.join(",");
-        const name = tokenInfo.name ?? 'Unknown name';
-        const symbol = tokenInfo.symbol ?? 'Unknown symbol';
-        const decimals = tokenInfo.decimals ?? 'Unknown decimals';
-        const row = `${name},${symbol},${decimals},${address},${resultBitString}`;
+        const row = `${address},${resultBitString}`;
         core.info(row);
       } catch (e) {
         core.warning(`Couldn't test token ${tokenInfo.name ?? 'Unknown name'} (address ${address})`);
