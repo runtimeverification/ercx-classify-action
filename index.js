@@ -36,8 +36,9 @@ async function run() {
     core.info("Results");
     core.info(`Name,Symbol,Decimals,Address,${testCases.join(",")}`);
     // Call post deployment test for each address
-    for (let [address, tokenInfo] of addresses) {
+    for (let tokenInfo of addresses) {
       try {
+        const address = tokenInfo.address;
         const testResult = await forgeTest(address);
         const results = testResult[testSuite].test_results;
         const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
@@ -111,7 +112,7 @@ async function readAddresses() {
   const count = Number(core.getInput('test_set_count'));
   const addressFileContents = await fs.readFile(addressFile, 'utf8');
   const addressJson = JSON.parse(addressFileContents);
-  const addresses = Object.entries(addressJson).slice(
+  const addresses = addressJson.slice(
     startIndex,
     startIndex + count
   );
