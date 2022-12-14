@@ -4155,7 +4155,7 @@ async function run() {
     const addresses = await readAddresses();
 
     core.info("Results");
-    core.info(`Address,${testCases.join(",")}`);
+    core.info(`Name,Symbol,Decimals,Address,${testCases.join(",")}`);
     // Call post deployment test for each address
     for (let tokenInfo of addresses) {
       try {
@@ -4165,12 +4165,15 @@ async function run() {
         const resultsSorted = Object.entries(results).sort(([aKey,aVal],[bKey, bVal]) => 
           aKey < bKey ? -1 : (aKey === bKey) ? 0 : 1
         );
+        const name = results["testFailName()"].reason || "unknown";
+        const symbol = results["testFailSymbol()"].reason || "unknown";
+        const decimals = results["testFailDecimals()"].reason || "unknown";
         const resultBits = [];
         for (let [testName, result] of resultsSorted) {
           resultBits.push(result.success ? "1" : "0");
         }
         const resultBitString = resultBits.join(",");
-        const row = `${address},${resultBitString}`;
+        const row = `${name},${symbol},${decimals},${address},${resultBitString}`;
         core.info(row);
       } catch (e) {
         core.warning(`Couldn't test token ${tokenInfo.name ?? 'Unknown name'} (address ${address})`);
